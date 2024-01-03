@@ -1,6 +1,6 @@
 import axios from "axios";
 export default defineNuxtPlugin((nuxtApp) => {
-  const defaultUrl = "https://admin.jairmanrique.dev3ch.com";
+  const defaultUrl = "https://admin.jairmanrique.com";
 
   let api = axios.create({
     baseUrl: defaultUrl,

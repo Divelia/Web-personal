@@ -189,15 +189,15 @@ export default {
 
   methods: {
     async getEstadisticas() {
-      let response = await axios.get('https://admin.jairmanrique.dev3ch.com/api/v1/portafolio/estadisticas/');
+      let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/estadisticas/');
       this.estadisticas = response.data
     },
     async getTecnologias() {
-      let response = await axios.get('https://admin.jairmanrique.dev3ch.com/api/v1/portafolio/tecnologias/');
+      let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/tecnologias/');
       this.tecnologias = response.data
     },
     async getEmpresas() {
-      let response = await axios.get('https://admin.jairmanrique.dev3ch.com/api/v1/portafolio/empresas-fundadas/');
+      let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/empresas-fundadas/');
       this.empresas = response.data
       this.dataFiltro = this.empresas
     },
@@ -205,18 +205,18 @@ export default {
       this.dataFiltro = this.empresas
     },
     async getPremios() {
-      let response = await axios.get('https://admin.jairmanrique.dev3ch.com/api/v1/portafolio/reconocimientos-premios/');
+      let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/reconocimientos-premios/');
       this.premios = response.data
     },
     premiosFilter() {
       this.dataFiltro = this.premios
     },
     async getServicios() {
-      let response = await axios.get('https://admin.jairmanrique.dev3ch.com/api/v1/portafolio/servicios/');
+      let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/servicios/');
       this.servicios = response.data
     },
     async getRevistas() {
-      let response = await axios.get('https://admin.jairmanrique.dev3ch.com/api/v1/portafolio/revistas-noticieros/');
+      let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/revistas-noticieros/');
       this.revistas = response.data
     }
   },

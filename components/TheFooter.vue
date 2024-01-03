@@ -108,7 +108,7 @@ export default {
   }),
   methods: {
     async getPerfil() {
-      let response = await axios.get('https://admin.jairmanrique.dev3ch.com/api/v1/portafolio/perfil/');
+      let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/perfil/');
       this.perfil = response.data
     }
   },
