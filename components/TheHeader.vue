@@ -11,7 +11,7 @@
 </template>
 <style scoped>
 .my-link.router-link-active {
-  border-bottom-color: #3f68fe !important;
+  border-bottom-color: #6855F9 !important;
   border-bottom-style: solid;
   border-bottom-width: 3px;
   text-align: center;
@@ -19,7 +19,7 @@
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 800;
-  color: #1D48FF !important;
+  color: #6855F9 !important;
 }
 
 a {
@@ -45,7 +45,7 @@ a:hover {
 }
 
 a:active {
-  color: #1D48FF;
+  color: #6855F9;
   text-align: center;
   font-family: Montserrat;
   font-size: 0.9375rem;

@@ -13,7 +13,7 @@
       </p>
       <div class="timeline">
         <v-timeline side="end" align="start">
-          <v-timeline-item dot-color="#1D48FF">
+          <v-timeline-item dot-color="#6855F9">
             <div>
               <p class="timeline__description">
                 Curabitur tempus urna at turpis condimentum lobortis. Ut commodo
@@ -23,7 +23,7 @@
             </div>
           </v-timeline-item>
 
-          <v-timeline-item dot-color="#1D48FF">
+          <v-timeline-item dot-color="#6855F9">
             <div>
               <p class="timeline__description">
                 Qu ad litora torquent per conubia nostra, per inceptos
@@ -34,7 +34,7 @@
             </div>
           </v-timeline-item>
 
-          <v-timeline-item dot-color="#1D48FF">
+          <v-timeline-item dot-color="#6855F9">
             <div>
               <p class="timeline__description">
                 Ut diam quam, semper iaculis condimentum ac, vestibulum eu
@@ -58,7 +58,7 @@
       height="52px"
       rounded="xl"
       size="large"
-      color="#1D48FF"
+      color="#6855F9"
       style="padding: 0 5rem"
       @click="dialog = !dialog"
     >
