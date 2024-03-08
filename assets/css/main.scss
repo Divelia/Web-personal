@@ -140,7 +140,7 @@ img {
   &__nav-container {
     display: flow-root;
     justify-content: center;
-    margin: 3rem 0;
+    margin: 1.5rem 0;
     width: 100%;
   }
 }
@@ -180,6 +180,10 @@ img {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+  }
+
+  &__image{
+    width: 120px;
   }
 }
 
@@ -236,17 +240,17 @@ img {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin: 1em 0;
+    margin: 0.75em 0;
   }
   &__description {
     color: #34333F;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin: 1em 0;
+    margin: 0.75em 0;
   }
   &__content {
     display: grid;
@@ -270,13 +274,26 @@ img {
   }
 
   &__nav-text {
-    color: var(--div-100, #6855F9);
     text-align: center !important;
+    margin: 1rem;
     font-size: 0.9375rem !important;
     font-family: Montserrat !important;
     font-style: normal !important;
     font-weight: 600 !important;
     line-height: 1.25rem !important;
+    color: #6855F9 !important;
+  }
+  
+  &__nav-text-active {
+    text-align: center !important;
+    margin: 1rem;
+    font-size: 0.9375rem !important;
+    font-family: Montserrat !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 1.25rem !important;
+    color: #fff !important;
+    background-color: #6855F9 !important;;
   }
 
   &__container-cards {
@@ -323,10 +340,8 @@ img {
 
   &__card {
     width: 220px;
-    height: 120px;
     border-radius: 0.625rem !important;
     border: 1px solid var(--div-300, #DEDEDE) !important;
-    padding: 0.5rem !important;
     margin: 1rem;
     display: flex !important;
     justify-content: center !important;
@@ -599,6 +614,9 @@ img {
 
 @media screen and (max-width: 600px) {
 
+  .header {
+    margin: 1rem;
+  }
   .portada {
     display: flex;
     margin: 5rem auto 0 2rem;
@@ -626,7 +644,8 @@ img {
   }
 
   .cifras {
-    margin: 0 2rem 0 2rem;
+    margin: 0 1rem 0 1rem;
+    padding: 1rem;
 
     &__cards-container {
       width: 100%;
@@ -661,7 +680,6 @@ img {
     &__cards-container {
       width: 100%;
       margin-top: -6rem;
-      padding: 3rem;
     }
   }
 
@@ -674,7 +692,7 @@ img {
     }
   }
   .revista {
-    margin: 0rem 2rem 0 2rem;
+    margin: 2rem 2rem 0 2rem;
     padding: 2rem;
 
     &__card {
