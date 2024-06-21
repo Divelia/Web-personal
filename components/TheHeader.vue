@@ -1,75 +1,114 @@
 <template>
-  <div class="d-flex">
-    <v-row no-gutters style="width: 100%;">
-      <v-col class="header">
-        <nuxt-link to="/" class="my-link"> Inicio </nuxt-link>
-        <nuxt-link to="/about" class="my-link"> Acerca de mí </nuxt-link>
-        <nuxt-link to="/servicios/" class="my-link"> Servicios </nuxt-link>
-      </v-col>
-    </v-row>
-  </div>
+  <nav class="bg-white lg:shadow-none shadow-md shadow-gray-400">
+    <div
+      class="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4"
+    >
+      <button
+        @click="toggleMenu"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg text-white bg-primary lg:hidden focus:outline-none focus:ring-2"
+        aria-controls="navbar-default"
+        aria-expanded="false"
+      >
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
+        </svg>
+      </button>
+      <div
+        :class="{ block: isMenuOpen, hidden: !isMenuOpen }"
+        class="w-full lg:block lg:w-auto"
+        id="navbar-default"
+      >
+        <ul
+          class="font-medium flex flex-col p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0"
+        >
+          <li v-for="item in menuItems" :key="item.title">
+            <nuxt-link
+              class="block py-2 px-3 text-left lg:text-center my-link"
+              :to="item.link"
+            >
+              {{ item.title }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
-import axios from 'axios'
-export default {
-  name: 'TheHeader',
-  data: () => ({
-    servicios: null,
-  }),
-  methods: {
-    async getServicios() {
-      let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/servicios/');
-      this.servicios = response.data
-    }
-  },
-  mounted() {
-    this.getServicios()
-  },
-}
+  export default {
+    name: "TheHeader",
+    data() {
+      return {
+        isMenuOpen: false,
+        menuItems: [
+          { title: "Inicio", link: "/" },
+          { title: "Acerca de mí", link: "/about" },
+          { title: "Eventos", link: "/eventos" },
+          { title: "Foro", link: "/foro" },
+          { title: "Blogs", link: "/blogs" },
+          { title: "Servicios Empresariales", link: "/servicios" },
+        ],
+      };
+    },
+    methods: {
+      toggleMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
+      },
+    },
+  };
 </script>
+
 <style scoped>
-.my-link.router-link-active {
-  border-bottom-color: #6855F9 !important;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 0.9375rem;
-  font-style: normal;
-  font-weight: 800;
-  color: #6855F9 !important;
-}
+  .my-link.router-link-active {
+    border-bottom-color: #6855f9 !important;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    font-family: Montserrat;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 800;
+    color: #6855f9 !important;
+  }
 
-a {
-  background-color: transparent;
-  padding: 0.5rem 2rem;
-  color: #34333F;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 0.9375rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.25rem;
-  text-decoration: none
-}
+  .my-link {
+    background-color: transparent;
+    color: #34333f;
+    font-family: Montserrat;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem;
+    text-decoration: none;
+  }
 
-a:hover {
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 0.9375rem;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 1.25rem;
-}
+  .my-link:hover {
+    font-family: Montserrat;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1.25rem;
+  }
 
-a:active {
-  color: #6855F9;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 0.9375rem;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 1.25rem;
-}
+  .my-link:active {
+    color: #6855f9;
+    font-family: Montserrat;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1.25rem;
+  }
 </style>
