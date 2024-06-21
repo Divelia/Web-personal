@@ -1,6 +1,6 @@
 <template>
   <div class="bg-primary">
-    <div class="py-10 lg:mx-[6rem] mx-[3rem] flex flex-col">
+    <div class="py-10 lg:mx-[6rem] md:mx-[3rem] mx-[1rem] flex flex-col">
       <div class="flex flex-col md:flex-row justify-between">
         <div class="mb-10 lg:mb-0">
           <p class="text-2xl font-bold text-white mb-5">

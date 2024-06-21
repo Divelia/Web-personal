@@ -42,6 +42,14 @@
               {{ item.title }}
             </nuxt-link>
           </li>
+          <li class="lg:mt-0 mt-5">
+            <nuxt-link
+              class="text-white bg-primary py-2 px-6 rounded-full text-lg font-semibold"
+              to="/auth/login"
+            >
+              Iniciar Sesión
+            </nuxt-link>
+          </li>
         </ul>
       </div>
     </div>
