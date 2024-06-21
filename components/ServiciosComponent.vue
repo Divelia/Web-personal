@@ -45,7 +45,6 @@
 </template>
 <script>
 import axios from 'axios'
-import '@/assets/css/main.scss'
 export default {
     name: 'ServiciosComponent',
     data: () => ({

@@ -14,7 +14,6 @@
 
 <script>
 import axios from 'axios'
-import '@/assets/css/main.scss'
 export default {
     name: 'CifrasComponent',
     data: () => ({
