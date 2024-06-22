@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-20 h-[100%] min-h-screen">
     <the-header />
-    <div class="flex-grow flex flex-col gap-20 items-center lg:mx-[5rem] md:mx-[3rem] mx-[1rem]">
+    <div class="flex-grow flex flex-col gap-20 lg:mx-[5rem] md:mx-[3rem] mx-[1rem]">
       <slot />
       <contact-form />
     </div>
