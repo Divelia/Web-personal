@@ -32,20 +32,17 @@
     <div>
       <empresas-component />
     </div>
+    <div>
+      <revistas-component />
+    </div>
   </NuxtLayout>
 </template>
 <script>
-  import CifrasComponent from "../components/CifrasComponent.vue";
-  import TecnologiasComponent from "../components/TecnologiasComponent.vue";
   import EmpresasComponent from "../components/EmpresasComponent.vue";
-  import ServiciosComponent from "../components/ServiciosComponent.vue";
   import RevistasComponent from "../components/RevistasComponent.vue";
   export default {
     components: {
-      CifrasComponent,
-      TecnologiasComponent,
       EmpresasComponent,
-      ServiciosComponent,
       RevistasComponent,
     },
     data() {

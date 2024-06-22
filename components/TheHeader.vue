@@ -1,7 +1,7 @@
 <template>
   <nav class="bg-white lg:shadow-none shadow-md shadow-gray-400">
     <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4"
+      class="max-w-screen-xl flex flex-wrap items-center justify-end lg:justify-center xl:justify-end mx-auto p-4"
     >
       <button
         @click="toggleMenu"
@@ -32,7 +32,7 @@
         id="navbar-default"
       >
         <ul
-          class="font-medium flex flex-col p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0"
+          class="font-medium flex flex-col lg:items-center p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0"
         >
           <li v-for="item in menuItems" :key="item.title">
             <nuxt-link
