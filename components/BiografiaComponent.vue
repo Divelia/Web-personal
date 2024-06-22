@@ -23,12 +23,12 @@
       </div>
     </div>
     <div class="w-full">
-      <ol class="relative border-l border-gray-200 pl-6">
+      <ol class="relative border-l border-gray-400 pl-6">
         <li v-for="(year, i) in biografiaSelect" :key="i" class="mb-10">
           <div
-            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"
+            class="absolute w-5 h-5 bg-primary rounded-full mt-1.5 -left-2.5 border border-white"
           ></div>
-          <time class="mb-1 text-sm font-normal leading-none text-gray-400">
+          <time class="mb-1 text-[1.5rem] font-[700] leading-none text-primary">
             {{ year.year }}
           </time>
           <div class="relative w-full overflow-hidden">
@@ -94,20 +94,50 @@
               </button>
             </div>
           </div>
+          <div class="p-4">
+            <button
+              @click="openModal(year.biographies_media)"
+              class="bg-indigo-500 text-white rounded-xl py-2 px-6 transition duration-300 hover:bg-indigo-600 focus:outline-none"
+            >
+              Ver Fotos
+            </button>
+          </div>
         </li>
       </ol>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div
+    v-if="dialog"
+    class="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black bg-opacity-50"
+  >
+    <div class="bg-white w-full max-w-lg p-6 rounded-lg shadow-lg">
+      <div class="text-center">
+        <h3 class="text-2xl font-semibold text-gray-800">Fotos y Videos</h3>
+      </div>
+      <div class="mt-4">
+        <p>Hola</p>
+      </div>
+      <div class="mt-6 flex justify-end">
+        <button
+          @click="dialog = false"
+          class="bg-gray-300 text-gray-700 rounded-lg py-2 px-4 transition duration-300 hover:bg-gray-400 focus:outline-none"
+        >
+          Cerrar
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-  import axios from "axios";
-
   export default {
     data() {
       return {
         biografia: [],
         biografiaSelect: [],
+        dialog: false,
+        selectedMedia: [],
       };
     },
 
@@ -129,6 +159,11 @@
 
       isActive(years) {
         return this.biografiaSelect === years;
+      },
+
+      openModal(media) {
+        this.selectedMedia = media;
+        this.dialog = true;
       },
     },
 

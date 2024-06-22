@@ -1,6 +1,31 @@
 <template>
   <NuxtLayout :name="layout">
-    <div class="flex flex-col gap-[5rem]">
+    <div
+      v-if="loading"
+      class="flex items-center justify-center bg-gray-100 bg-opacity-50"
+    >
+      <svg
+        class="animate-spin h-8 w-8 text-primary"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          class="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        ></circle>
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0c-6.627 0-12 5.373-12 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 4.411 3.589 8 8 8v-2.709z"
+        ></path>
+      </svg>
+    </div>
+    <div v-else class="flex flex-col gap-[5rem]">
       <div class="flex lg:flex-row flex-col items-center gap-[3rem]">
         <div class="w-full lg:mr-[5rem]">
           <p
@@ -51,6 +76,7 @@
         imageP: null,
         description: null,
         layout: "landing",
+        loading: true,
       };
     },
     methods: {
@@ -63,6 +89,8 @@
           this.description = this.portada.description;
         } catch (error) {
           console.error("Error al obtener la información:", error);
+        } finally {
+          this.loading = false;
         }
       },
     },

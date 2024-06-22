@@ -8,7 +8,7 @@
     </div>
     <div class="flex flex-col bg-white">
       <div class="mb-6">
-        <div class="flex space-x-4 mt-4">
+        <div class="flex space-x-4 mt-4 overflow-x-scroll">
           <button
             v-for="(tipo, index) in tipos"
             :key="index"
