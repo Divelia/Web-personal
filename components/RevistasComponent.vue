@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center px-[3rem] py-[3rem] border  border-[#dedede] rounded-[1.8rem] bg-white">
     <div class="text-center w-full">
-      <p class="text-lg text-[2rem] text-left font-[700] text-gray-700">Revistas y noticieros</p>
+      <p class="text-lg md:text-[2rem] text-[1.5rem] text-left font-[700] text-gray-700">Revistas y noticieros</p>
     </div>
     <div
       class="flex flex-wrap justify-evenly my-[3rem] w-full"

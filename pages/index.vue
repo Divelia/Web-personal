@@ -25,8 +25,8 @@
         ></path>
       </svg>
     </div>
-    <div v-else>
-      <div class="flex lg:flex-row flex-col items-center">
+    <div v-else class="flex flex-col gap-[5rem]">
+      <div class="flex lg:flex-row flex-col items-center gap-[3rem]">
         <div class="w-full lg:mr-[5rem]">
           <p
             class="text-[#1EF0C3] text-[2.5rem] font-[600] leading-[2rem] mb-[2rem]"
@@ -66,8 +66,8 @@
 </template>
 
 <script>
-  import EmpresasComponent from "../components/EmpresasComponent.vue";
-  import RevistasComponent from "../components/RevistasComponent.vue";
+  import EmpresasComponent from "@/components/EmpresasComponent.vue";
+  import RevistasComponent from "@/components/RevistasComponent.vue";
   export default {
     components: {
       EmpresasComponent,

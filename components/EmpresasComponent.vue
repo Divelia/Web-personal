@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col py-10 bg-white">
+  <div class="flex flex-col bg-white">
     <div class="mb-6">
       <p class="text-lg md:text-[2rem] text-[1.5rem] font-semibold items-start text-gray-800">
         Empresas fundadas
