@@ -2,7 +2,7 @@
   <NuxtLayout :name="layout">
     <div
       v-if="loading"
-      class="flex items-center justify-center bg-gray-100 bg-opacity-50"
+      class="flex items-center justify-center bg-opacity-50"
     >
       <svg
         class="animate-spin h-8 w-8 text-primary"

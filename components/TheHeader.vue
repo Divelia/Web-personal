@@ -44,7 +44,7 @@
           </li>
           <li class="lg:mt-0 mt-5">
             <nuxt-link
-              class="text-white bg-primary py-2 px-6 rounded-full text-lg font-semibold"
+              class="text-white bg-primary py-2 px-6 rounded-full text-lg font-semibold hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
               to="/auth/login"
             >
               Iniciar Sesión
