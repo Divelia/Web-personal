@@ -25,7 +25,7 @@
         </div>
       </div>
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl"
+        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full"
       >
         <div
           class="bg-indigo-600 rounded-lg shadow-lg overflow-hidden"
