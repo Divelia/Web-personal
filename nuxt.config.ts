@@ -1,12 +1,11 @@
-export default ({
-  // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@/assets/css/main.scss',
-    'vuetify/lib/styles/main.sass',
-    '@mdi/font/css/materialdesignicons.min.css'
-  ],
-  components: true,
-  build: {
-    transpile: ['vuetify']
-  }
-});
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  css: ['@/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+})

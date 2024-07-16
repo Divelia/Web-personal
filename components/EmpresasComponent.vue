@@ -1,79 +1,92 @@
 <template>
-    <div class="portada">
-        <div class="portada__text-container">
-            <p class="portada__subtitle">Empresas fundadas</p>
-            <div class="empresas__container-nav">
-                <v-sheet class="mx-auto">
-                    <v-slide-group>
-                        <v-slide-group-item>
-                            <v-btn :class="isActive ? 'empresas__nav-text-active' : 'empresas__nav-text'" height="52px"
-                                rounded="xl" style="padding: 0 2rem" @click="empresasFilter">
-                                Empresas
-                            </v-btn>
-                        </v-slide-group-item>
-                        <v-slide-group-item>
-                            <v-btn :class="isActive1 ? 'empresas__nav-text-active' : 'empresas__nav-text'" height="52px"
-                                rounded="xl" style="padding: 0 2rem" @click="premiosFilter">
-                                Reconocimientos y premios
-                            </v-btn>
-                        </v-slide-group-item>
-                    </v-slide-group>
-                </v-sheet>
-            </div>
-            <div class="empresas__container-cards">
-                <v-card class="empresas__card" v-for="(dataInd, di) in dataFiltro" :key="di">
-                    <img :src="dataInd.image" />
-                </v-card>
-            </div>
-        </div>
-        <div class="portada__img-container">
-            <img src="@/assets/img/img08.png" />
-        </div>
+  <div class="flex flex-col gap-5 bg-white">
+    <div class="flex flex-col gap-5">
+      <p class="text-lg md:text-[2rem] text-[1.5rem] font-semibold items-start text-gray-800">
+        Empresas fundadas
+      </p>
+      <div class="flex space-x-4 mt-4">
+        <button
+          :class="
+            isActive
+              ? 'bg-indigo-500 text-white'
+              : 'bg-white text-indigo-500 border-indigo-500 border'
+          "
+          class="py-2 px-4 rounded-xl transition-all duration-300"
+          @click="empresasFilter"
+        >
+          Empresas
+        </button>
+        <button
+          :class="
+            isActive1
+              ? 'bg-indigo-500 text-white'
+              : 'bg-white text-indigo-500 border-indigo-500 border'
+          "
+          class="py-2 px-4 rounded-xl transition-all duration-300"
+          @click="premiosFilter"
+        >
+          Reconocimientos y premios
+        </button>
+      </div>
     </div>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl"
+    >
+      <div
+        class="bg-white shadow-lg rounded-lg overflow-hidden"
+        v-for="(dataInd, di) in dataFiltro"
+        :key="di"
+      >
+        <img :src="dataInd.image" class="w-full h-48 object-cover" />
+      </div>
+    </div>
+  </div>
 </template>
+
 <script>
-import axios from 'axios'
-export default {
-    name: 'EmpresasComponent',
-    data: () => ({
+  export default {
+    name: "EmpresasComponent",
+    data() {
+      return {
         isActive: true,
         isActive1: false,
-        dataFiltro: '',
+        dataFiltro: "",
         empresas: null,
         premios: null,
-    }),
+      };
+    },
     methods: {
-        async getEmpresas() {
-            let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/empresas-fundadas/');
-            this.empresas = response.data
-            this.dataFiltro = this.empresas
-        },
-        empresasFilter() {
-            this.dataFiltro = this.empresas,
-                this.isActive = true,
-                this.isActive1 = false
-        },
-        async getPremios() {
-            let response = await axios.get('https://admin.jairmanrique.com/api/v1/portafolio/reconocimientos-premios/');
-            this.premios = response.data
-        },
-        premiosFilter() {
-            this.dataFiltro = this.premios,
-                this.isActive = false,
-                this.isActive1 = true
-        },
+      async getEmpresas() {
+        let response = await this.$api.get("/portafolio/empresas-fundadas/");
+        this.empresas = response.data;
+        this.dataFiltro = this.empresas;
+      },
+      empresasFilter() {
+        this.dataFiltro = this.empresas;
+        this.isActive = true;
+        this.isActive1 = false;
+      },
+      async getPremios() {
+        let response = await this.$api.get(
+          "/portafolio/reconocimientos-premios/"
+        );
+        this.premios = response.data;
+      },
+      premiosFilter() {
+        this.dataFiltro = this.premios;
+        this.isActive = false;
+        this.isActive1 = true;
+      },
     },
     mounted() {
-        this.getEmpresas()
-        this.getPremios()
+      this.getEmpresas();
+      this.getPremios();
     },
-}
+  };
 </script>
 
 <style scoped>
-.v-btn {
-    text-transform: none !important;
-    border-radius: 1.875rem;
-    border: 1px solid var(--div-100, #6855F9);
-}
+  button {
+    outline: none;
+  }
 </style>
